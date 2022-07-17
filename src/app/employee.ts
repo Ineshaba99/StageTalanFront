@@ -4,4 +4,6 @@ export class Employee {
     firstName : string;
     lastName : string;
     emailId : string;
+    cin : string;
+    numPasseport : string;
 }
