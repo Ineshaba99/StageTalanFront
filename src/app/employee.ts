@@ -7,3 +7,8 @@ export class Employee {
     cin : string;
     numPasseport : string;
 }
+export class TypeDemande {
+    id : number;
+    nomTypeDemande : string;
+   
+}

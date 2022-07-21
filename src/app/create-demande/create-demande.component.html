@@ -1,0 +1,30 @@
+
+<div class="col-md-8 offset-md-3">
+    <h3> Creez votre Demande </h3>
+    <form (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+        <label>nom de la demande</label>
+        <input type="text" class="form-control" >
+        <!-- Example split danger button -->
+
+<label class="col-sm-2"> Type de la demande</label>
+<div class ="col-sm-10">
+    <select name="TypeDemande"  class="form-control">
+        <option>--select--</option>
+        <option class="bootstrap-solid" [value]="TypeDemande.id" *ngFor="let TypeDemande of TypeDemandeList">
+            {{TypeDemande.nom}}
+        </option>
+
+    </select>
+
+</div>
+
+
+    </div>
+
+    <div>
+        
+<app-upload-files></app-upload-files>
+</div>
+</form>
+</div>

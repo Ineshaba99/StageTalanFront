@@ -1,12 +1,20 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <ul class="navbar-nav">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Talan
+  </a>
+  <ul class="navbar-nav text-center">
     <li class="nav-item">
       <a routerLink="employees" routerLinkActive="active"  class="nav-link"> Employee List </a>
     </li>
     <li class="nav-item">
       <a routerLink="create-employee" routerLinkActive="active"  class="nav-link"> Add Employee </a>
     </li>
+    <li class="nav-item">
+      <a routerLink="create-demande" routerLinkActive="active"  class="nav-link"> demande </a>
+    </li>
   </ul>
+  
 
 </nav>
 
@@ -15,10 +23,10 @@
 <h1 class ="text-center"> {{title}}</h1>
 <div class="container">
 <router-outlet></router-outlet>
-<app-upload-files></app-upload-files>
+
 </div>
 <footer class ="footer">
   <div class="container">
-    <span>All rights reserved Ines</span>
+    <span>Talan Tunisie</span>
   </div>
 </footer>

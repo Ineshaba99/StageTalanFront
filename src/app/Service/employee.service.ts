@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Employee } from './employee';
+import { Employee } from '../employee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-private baseURL = "http://localhost:8062/api/v1/employees";
+private baseURL = "http://localhost:8081/employee/employees";
   constructor(private httpClient : HttpClient) { }
  
   getEmployeesList(): Observable<Employee[]>{
