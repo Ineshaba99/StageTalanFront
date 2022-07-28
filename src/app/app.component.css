@@ -38,3 +38,35 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: rgb(49, 49, 249);}
+  
+  .card {
+  
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 1300px;
+    height: auto;
+    background: white;
+
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+  .body {
+    background-image: url("src\assets\image\talanbg2.jpg");
+    background-repeat: repeat;
+    background-color: #cccccc;
+    height: 900px;
+  }
+  .text-center{
+color: white;
+font-family: 'Arial';
+font-weight: bold;
+
+  }

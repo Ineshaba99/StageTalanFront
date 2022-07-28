@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <a class="navbar-brand" href="#">
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="../assets/image/talan.png" width="30" height="30" class="d-inline-block align-top" alt="">
     Talan
   </a>
   <ul class="navbar-nav text-center">
@@ -14,7 +14,6 @@
         <li class="nav-item">
           <a routerLink="create-employee" routerLinkActive="active"  class="nav-link"> Add Employee </a>
         </li>
-        
        
       </div>
     </div>
@@ -30,14 +29,19 @@
 </nav>
 
 
-
+<div class="body">
 <h1 class ="text-center"> {{title}}</h1>
-<div class="container">
+<br>
+
+<div class="card">
 <router-outlet></router-outlet>
+</div>
 
 </div>
+
 <footer class ="footer">
   <div class="container">
     <span>Talan Tunisie</span>
   </div>
 </footer>
+
