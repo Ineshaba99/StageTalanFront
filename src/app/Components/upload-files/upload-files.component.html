@@ -26,10 +26,11 @@
     <div class="card-header">List of Files</div>
     <ul
       class="list-group list-group-flush"
-      *ngFor="let file of fileInfos | async"
+      *ngFor="let file of fileInfos | async ;let index = index"
     >
       <li class="list-group-item">
         <a href="{{ file.url }}">{{ file.name }}</a>
+        <button mat-icon-button (click)="removeSelectedFile(index)">delete</button>
       </li>
     </ul>
   </div>

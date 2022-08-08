@@ -4,30 +4,21 @@
     <form (ngSubmit)="onSubmit()" >
 
 
-<!-- 
-    <div class="form-group">
-        <label>nom de la demande</label>
-        <input type="text" class="form-control" >
-    </div>
-        Example split danger button -->
         <br>
 
-<label > Type de la demande</label>
-<div class ="col-sm-10">
-    <select name="TypeDemande"  class="custom-select-lg form-control">
-        <option>--select--</option>
-        <option class="bootstrap-solid" [value]="TypeDemande.id" *ngFor="let TypeDemande of TypeDemandeList">
-            {{TypeDemande.nom}}
-        </option>
+        
+        <label > Type de la demande</label>
+        <div class ="col-sm-10">
+            
+        <select class="form-control col-lg-8"  id="TypeDemande" name="TypeDemande" [(ngModel)]="TypeDemande" (ngModelChange)="SelectTypeDemande($event , TypeDemande)">
+            
+            <option  class="bootstrap-solid" *ngFor="let typeDemande of TypeDemandeList" [ngValue]="typeDemande">{{typeDemande.nomTypeDemande}}</option>
+        </select>
+    </div>
 
-    </select>
-
-</div>
 <br>
   
   
-
-
     
     <label >Votre dossier concerne-il plusieurs employés ? </label>
     <br>
@@ -61,14 +52,18 @@
 
     <section>
        
-          <div *ngFor="let country of countries; let i=index">
-            <input type="checkbox" formArrayName="selectedCountries" [value]="country.value" (change)="onCheckboxChange($event)" 
-            />
-            {{ country.name}}
+          <div class="form-check" *ngFor="let emp of employeeList; let i=index">
+        
+            <input class="form-check-input"  type="checkbox" [value]="emp.id" (change)="onCheckboxChange(emp , $event)">
+            
+            <label class="form-check-label">
+                {{ emp.firstName}}
+              </label>
+            
           </div>
           
       
-        <p>{{ form.value | json }}</p>
+        <!-- <p>{{ form.value | json }}</p> -->
       </section>
 
 </div>
