@@ -44,12 +44,13 @@ export class CreateDemandeComponent implements OnInit {
   }
   
       onSubmit(){
-       console.log(this.selectedValue);
+        // console.log(this.selectedValue);
+       // console.log(this.employeeListChecked);
         this.demande.type_Demande=this.selectedValue;
         this.demande.employeeList=this.employeeListChecked;
+        console.log(this.employeeListChecked);
         console.log(this.demande);
         this.saveDemande();
-        
         
       }
 
@@ -82,9 +83,9 @@ export class CreateDemandeComponent implements OnInit {
 
  
 
-      SelectTypeDemande(selectedValue: any , type_Demande :TypeDemande) {
+      SelectTypeDemande(selectedValue: any , TypeDemande :TypeDemande) {
       
-        this.selectedValue=this.TypeDemandeList[1];
+        this.selectedValue=this.TypeDemande;
         
         console.log(this.selectedValue);
       //  console.log(type_Demande);

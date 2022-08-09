@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { UploadFileService } from 'src/app/Service/upload-file.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,7 +11,11 @@ import { Observable } from 'rxjs';
 
 export class UploadFilesComponent implements OnInit {
 
+  //@Output() ListFilesCreated = new EventEmitter<{ ListFiles: File }>();
+  
+  //liste des files 
   selectedFiles: FileList;
+
   currentFile: File;
   progress = 0;
   message = '';
@@ -38,6 +42,7 @@ export class UploadFilesComponent implements OnInit {
         } else if (event instanceof HttpResponse) {
           this.message = event.body.message;
           this.fileInfos = this.uploadService.getFiles();
+         
         }
       },
       err => {
