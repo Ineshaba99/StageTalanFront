@@ -11,11 +11,8 @@ import { Observable } from 'rxjs';
 
 export class UploadFilesComponent implements OnInit {
 
-  //@Output() ListFilesCreated = new EventEmitter<{ ListFiles: File }>();
-  
   //liste des files 
   selectedFiles: FileList;
-
   currentFile: File;
   progress = 0;
   message = '';
@@ -25,6 +22,7 @@ export class UploadFilesComponent implements OnInit {
 
   ngOnInit() {
     this.fileInfos = this.uploadService.getFiles();
+   
   }
   
   selectFile(event:any) {
@@ -33,7 +31,6 @@ export class UploadFilesComponent implements OnInit {
 
   upload() {
     this.progress = 0;
-
     this.currentFile = this.selectedFiles.item(0);
     this.uploadService.upload(this.currentFile).subscribe(
       event => {

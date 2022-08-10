@@ -3,7 +3,7 @@ import { EmployeeService } from '../Service/employee.service';
 import { TypeDemandeService } from '../Service/type-demande.service';
 import { FormBuilder, FormGroup, FormArray, FormControl, Validators,AbstractControl } from '@angular/forms';
 import {DemandeService } from '../Service/demande.service';
-import { Demande, Employee, TypeDemande } from '../employee';
+import { Demande, Employee, FileInfo, TypeDemande } from '../employee';
 import { isNgTemplate } from '@angular/compiler';
 
 @Component({
@@ -30,7 +30,8 @@ export class CreateDemandeComponent implements OnInit {
         
      
   }
-
+ 
+  
   ngOnInit(): void {
     
     this.service.getTypeDemandeList().subscribe((data:any)=>{
@@ -41,6 +42,7 @@ export class CreateDemandeComponent implements OnInit {
       this.employeeList=data;
       console.log(this.employeeList);
     })
+    
   }
   
       onSubmit(){
@@ -50,6 +52,8 @@ export class CreateDemandeComponent implements OnInit {
         this.demande.employeeList=this.employeeListChecked;
         console.log(this.employeeListChecked);
         console.log(this.demande);
+      
+       
         this.saveDemande();
         
       }
